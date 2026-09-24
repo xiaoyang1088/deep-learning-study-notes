@@ -1,0 +1,48 @@
+# Python 生成的缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Python 虚拟环境
+.venv/
+venv/
+env/
+
+# 私密环境变量
+.env
+.env.*
+!.env.example
+
+# Jupyter 临时文件
+.ipynb_checkpoints/
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 数据集目录
+**/data/
+**/datasets/
+
+# 模型权重与检查点
+**/checkpoints/
+**/weights/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# 训练生成的大量输出
+**/runs/
+**/outputs/
+
+# 下载的压缩文件
+*.zip
+*.tar
+*.tar.gz
+*.tgz
