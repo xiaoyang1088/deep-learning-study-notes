@@ -16,7 +16,7 @@
 - [x] 创建独立 Conda 学习环境
 - [x] 安装支持 CUDA 的 PyTorch
 - [x] 验证 NVIDIA GPU 张量计算
-- [ ] 学习张量、形状和设备
+- [x] 学习张量、形状和设备
 - [ ] 完成最小图像分类实验
 - [ ] 学习并复现 ResNet
 - [ ] 学习并复现 Vision Transformer
