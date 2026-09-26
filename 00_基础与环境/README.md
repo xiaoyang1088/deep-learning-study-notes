@@ -24,6 +24,12 @@
 | `07_compare_image_conversion.py` | 比较两种图片转张量方法 |
 | `08_channel_normalization.py` | 通道标准化与广播 |
 | `09_matrix_multiplication.py` | 逐元素乘法与矩阵乘法 |
+| `10_linear_layer.py` | `nn.Linear` 与手工矩阵计算 |
+| `11_mse_loss.py` | 均方误差损失函数 |
+| `12_autograd.py` | 自动求导与参数梯度 |
+| `13_manual_parameter_update.py` | 手工更新权重和偏置 |
+| `14_optimizer_training_loop.py` | SGD 优化器与训练循环 |
+| `15_linear_regression.py` | 最小线性回归训练 |
 
 ## 运行方法
 
@@ -50,7 +56,11 @@ python 00_基础与环境/01_tensor_shape.py
 - 普通图片通常使用 `uint8` 和 `0～255`，模型输入通常转换为 `float32`。
 - 广播可以让不同但兼容的形状共同参与计算。
 - `*` 表示逐元素乘法，`@` 表示矩阵乘法。
+- `nn.Linear` 使用权重和偏置完成 `y=xWᵀ+b`。
+- 损失函数用于衡量预测值与目标值的差距。
+- `backward()` 计算梯度，梯度保存在参数的 `.grad` 中。
+- 优化器根据梯度更新参数，训练循环会重复前向计算、反向传播和参数更新。
 
 ## 下一步
 
-学习 PyTorch 线性层、损失函数、自动求导和参数更新。
+学习激活函数、`nn.Module`、`Dataset` 和 `DataLoader`，逐步过渡到图像分类训练。
