@@ -1,3 +1,5 @@
+#定义采用Option A捷径的CIFAR ResNet20和ResNet56。
+
 from torch import nn
 from torch.nn import functional 
 
@@ -15,7 +17,7 @@ class OptionAShortcut(nn.Module):
         #| 第3、4个 | 高度上下两侧 |
         #| 第5、6个 | 通道前后两侧 |
 
-class BasciBlock(nn.Module):
+class BasicBlock(nn.Module):
     def __init__(self,in_channels,out_channels,stride=1):
         super().__init__()
         self.conv1=nn.Conv2d(in_channels,out_channels,kernel_size=3,stride=stride,padding=1,bias=False)
@@ -49,19 +51,19 @@ class CifarResNet(nn.Module):
 
         for module in self.modules():
             if isinstance(module,nn.Conv2d):
-                nn.init.kaiming_normal_(module.weight,mode= 'fan_in',nonlinearity='relu')
+                nn.init.kaiming_normal_(module.weight,mode= 'fan_in',nonlinearity='relu')   #本实验fan_in=3*3*3=27  对2/fan_in开根号，得到标准差，入口卷积的权重从平均值为0，标准差为0.2722的正态分布中随机生成
             elif isinstance(module,nn.BatchNorm2d):
                 nn.init.ones_(module.weight)
                 nn.init.zeros_(module.bias)
             elif isinstance(module,nn.Linear):
-                nn.init.normal_(module.weight,mean=0.0,std=0.01)
+                nn.init.normal_(module.weight,mean=0.0,std=0.01)    #std:标准差
                 nn.init.zeros_(module.bias )
 
 
     def make_layer(self,in_channels,out_channels,count,stride):
-        blocks=[BasciBlock(in_channels,out_channels,stride)] 
+        blocks=[BasicBlock(in_channels,out_channels,stride)] 
         for block_index in range(1,count):
-            blocks.append(BasciBlock(out_channels,out_channels))
+            blocks.append(BasicBlock(out_channels,out_channels))
         return nn.Sequential(*blocks)
 
     def forward(self,inputs):

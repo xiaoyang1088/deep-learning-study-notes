@@ -1,3 +1,5 @@
+#读取CIFAR-10，进行预处理和数据增强，并组成训练与测试批次。
+
 import torch 
 from torch.utils.data import DataLoader
 from torchvision import datasets,transforms
@@ -15,7 +17,7 @@ def create_data_loaders(data_dir,batch_size=128):
     )
 
     mean_image=torch.tensor(
-        train_dataset.data.mean(axis=0),
+        train_dataset.data.mean(axis=0),    #axis:轴，即沿哪个维度计算
         dtype=torch.float32
     ).permute(2,0,1)    #调整维度顺序
 

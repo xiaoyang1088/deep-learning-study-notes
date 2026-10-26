@@ -1,3 +1,5 @@
+#训练CIFAR ResNet，记录训练过程，保存模型并进行最终测试。
+
 import argparse
 from pathlib import Path
 import time
@@ -36,20 +38,20 @@ def train(model,train_loader,device,log_path,total_updates=64000,print_every=100
         momentum=0.9,
         weight_decay=0.0001
     )
-    completed_updatas=0
+    completed_updates=0
     loss_sum=0.0
     correct_count=0
     sample_count=0
     started=time.perf_counter()
     model.train()
 
-    while completed_updatas<total_updates:
+    while completed_updates<total_updates:
         for images,labels in train_loader:
-            if completed_updatas>=total_updates:
+            if completed_updates>=total_updates:
                 break
             images = images.to(device)
             labels=labels.to(device)
-            current_lr=get_learning_rate(completed_updatas)
+            current_lr=get_learning_rate(completed_updates)
             for group in optimizer.param_groups:
                 group['lr']=current_lr
 
@@ -63,21 +65,21 @@ def train(model,train_loader,device,log_path,total_updates=64000,print_every=100
             loss.backward()
             optimizer.step()
 
-            completed_updatas+=1
+            completed_updates+=1
             loss_sum+=loss.item()*labels.size(0)
             correct_count+=(outputs.argmax(dim=1)==labels).sum().item()
             sample_count+=labels.size(0)
 
-            if completed_updatas%print_every==0 or completed_updatas==total_updates:
+            if completed_updates%print_every==0 or completed_updates==total_updates:
                 lasting_time=time.perf_counter()-started
                 print(
-                    f"更新={completed_updatas}/{total_updates},学习率={current_lr},损失={loss_sum/sample_count:.4f},训练批次准确率={100*correct_count/sample_count:.2f}%,用时={lasting_time}s",flush=True
+                    f"更新={completed_updates}/{total_updates},学习率={current_lr},损失={loss_sum/sample_count:.4f},训练批次准确率={100*correct_count/sample_count:.2f}%,用时={lasting_time}s",flush=True
                 )
 
                 with Path(log_path).open('a',encoding='utf-8',newline='')as file:
                     writer=csv.writer(file)
                     writer.writerow([
-                        completed_updatas,
+                        completed_updates,
                         current_lr,
                         loss_sum/sample_count,
                         100*correct_count/sample_count,
@@ -158,3 +160,4 @@ def main():
 if __name__ == "__main__":
     main()
     
+
