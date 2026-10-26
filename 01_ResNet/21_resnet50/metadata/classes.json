@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "dataset": "ImageNet self-selected subset",
+  "num_classes": 100,
+  "seed": 42,
+  "selection_method": "Sort all synsets,sample without replacement with random.Random(seed),then sort selected synsets.",
+  "source_file": "LOC_synset_mapping.txt",
+  "source_sha256": "acf75ef0abe89694b19056e0796401068b459c457baa30335f240c7692857355",
+  "class_list_sha256": "e3a6837abf27d4c087afdd7bfe25298090ab21bb3ae4cc9807e323f86e7018a9",
+  "classes": [
+    {
+      "class_index": 0,
+      "synset": "n01498041",
+      "name": "stingray"
+    },
+    {
+      "class_index": 1,
+      "synset": "n01629819",
+      "name": "European fire salamander, Salamandra salamandra"
+    },
+    {
+      "class_index": 2,
+      "synset": "n01631663",
+      "name": "eft"
+    },
+    {
+      "class_index": 3,
+      "synset": "n01641577",
+      "name": "bullfrog, Rana catesbeiana"
+    },
+    {
+      "class_index": 4,
+      "synset": "n01644900",
+      "name": "tailed frog, bell toad, ribbed toad, tailed toad, Ascaphus trui"
+    },
+    {
+      "class_index": 5,
+      "synset": "n01689811",
+      "name": "alligator lizard"
+    },
+    {
+      "class_index": 6,
+      "synset": "n01693334",
+      "name": "green lizard, Lacerta viridis"
+    },
+    {
+      "class_index": 7,
+      "synset": "n01770393",
+      "name": "scorpion"
+    },
+    {
+      "class_index": 8,
+      "synset": "n01795545",
+      "name": "black grouse"
+    },
+    {
+      "class_index": 9,
+      "synset": "n01796340",
+      "name": "ptarmigan"
+    },
+    {
+      "class_index": 10,
+      "synset": "n01819313",
+      "name": "sulphur-crested cockatoo, Kakatoe galerita, Cacatua galerita"
+    },
+    {
+      "class_index": 11,
+      "synset": "n01833805",
+      "name": "hummingbird"
+    },
+    {
+      "class_index": 12,
+      "synset": "n01843065",
+      "name": "jacamar"
+    },
+    {
+      "class_index": 13,
+      "synset": "n01855672",
+      "name": "goose"
+    },
+    {
+      "class_index": 14,
+      "synset": "n01873310",
+      "name": "platypus, duckbill, duckbilled platypus, duck-billed platypus, Ornithorhynchus anatinus"
+    },
+    {
+      "class_index": 15,
+      "synset": "n01877812",
+      "name": "wallaby, brush kangaroo"
+    },
+    {
+      "class_index": 16,
+      "synset": "n01945685",
+      "name": "slug"
+    },
+    {
+      "class_index": 17,
+      "synset": "n02002556",
+      "name": "white stork, Ciconia ciconia"
+    },
+    {
+      "class_index": 18,
+      "synset": "n02033041",
+      "name": "dowitcher"
+    },
+    {
+      "class_index": 19,
+      "synset": "n02087394",
+      "name": "Rhodesian ridgeback"
+    },
+    {
+      "class_index": 20,
+      "synset": "n02088466",
+      "name": "bloodhound, sleuthhound"
+    },
+    {
+      "class_index": 21,
+      "synset": "n02089867",
+      "name": "Walker hound, Walker foxhound"
+    },
+    {
+      "class_index": 22,
+      "synset": "n02097047",
+      "name": "miniature schnauzer"
+    },
+    {
+      "class_index": 23,
+      "synset": "n02098286",
+      "name": "West Highland white terrier"
+    },
+    {
+      "class_index": 24,
+      "synset": "n02101006",
+      "name": "Gordon setter"
+    },
+    {
+      "class_index": 25,
+      "synset": "n02102480",
+      "name": "Sussex spaniel"
+    },
+    {
+      "class_index": 26,
+      "synset": "n02104365",
+      "name": "schipperke"
+    },
+    {
+      "class_index": 27,
+      "synset": "n02105162",
+      "name": "malinois"
+    },
+    {
+      "class_index": 28,
+      "synset": "n02105505",
+      "name": "komondor"
+    },
+    {
+      "class_index": 29,
+      "synset": "n02106382",
+      "name": "Bouvier des Flandres, Bouviers des Flandres"
+    },
+    {
+      "class_index": 30,
+      "synset": "n02107574",
+      "name": "Greater Swiss Mountain dog"
+    },
+    {
+      "class_index": 31,
+      "synset": "n02110185",
+      "name": "Siberian husky"
+    },
+    {
+      "class_index": 32,
+      "synset": "n02114548",
+      "name": "white wolf, Arctic wolf, Canis lupus tundrarum"
+    },
+    {
+      "class_index": 33,
+      "synset": "n02123045",
+      "name": "tabby, tabby cat"
+    },
+    {
+      "class_index": 34,
+      "synset": "n02123597",
+      "name": "Siamese cat, Siamese"
+    },
+    {
+      "class_index": 35,
+      "synset": "n02134084",
+      "name": "ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus"
+    },
+    {
+      "class_index": 36,
+      "synset": "n02165105",
+      "name": "tiger beetle"
+    },
+    {
+      "class_index": 37,
+      "synset": "n02398521",
+      "name": "hippopotamus, hippo, river horse, Hippopotamus amphibius"
+    },
+    {
+      "class_index": 38,
+      "synset": "n02412080",
+      "name": "ram, tup"
+    },
+    {
+      "class_index": 39,
+      "synset": "n02422699",
+      "name": "impala, Aepyceros melampus"
+    },
+    {
+      "class_index": 40,
+      "synset": "n02454379",
+      "name": "armadillo"
+    },
+    {
+      "class_index": 41,
+      "synset": "n02481823",
+      "name": "chimpanzee, chimp, Pan troglodytes"
+    },
+    {
+      "class_index": 42,
+      "synset": "n02484975",
+      "name": "guenon, guenon monkey"
+    },
+    {
+      "class_index": 43,
+      "synset": "n02487347",
+      "name": "macaque"
+    },
+    {
+      "class_index": 44,
+      "synset": "n02492660",
+      "name": "howler monkey, howler"
+    },
+    {
+      "class_index": 45,
+      "synset": "n02509815",
+      "name": "lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens"
+    },
+    {
+      "class_index": 46,
+      "synset": "n02514041",
+      "name": "barracouta, snoek"
+    },
+    {
+      "class_index": 47,
+      "synset": "n02799071",
+      "name": "baseball"
+    },
+    {
+      "class_index": 48,
+      "synset": "n02804610",
+      "name": "bassoon"
+    },
+    {
+      "class_index": 49,
+      "synset": "n02892767",
+      "name": "brassiere, bra, bandeau"
+    },
+    {
+      "class_index": 50,
+      "synset": "n02910353",
+      "name": "buckle"
+    },
+    {
+      "class_index": 51,
+      "synset": "n02948072",
+      "name": "candle, taper, wax light"
+    },
+    {
+      "class_index": 52,
+      "synset": "n03126707",
+      "name": "crane"
+    },
+    {
+      "class_index": 53,
+      "synset": "n03291819",
+      "name": "envelope"
+    },
+    {
+      "class_index": 54,
+      "synset": "n03372029",
+      "name": "flute, transverse flute"
+    },
+    {
+      "class_index": 55,
+      "synset": "n03393912",
+      "name": "freight car"
+    },
+    {
+      "class_index": 56,
+      "synset": "n03445777",
+      "name": "golf ball"
+    },
+    {
+      "class_index": 57,
+      "synset": "n03485794",
+      "name": "handkerchief, hankie, hanky, hankey"
+    },
+    {
+      "class_index": 58,
+      "synset": "n03538406",
+      "name": "horse cart, horse-cart"
+    },
+    {
+      "class_index": 59,
+      "synset": "n03544143",
+      "name": "hourglass"
+    },
+    {
+      "class_index": 60,
+      "synset": "n03627232",
+      "name": "knot"
+    },
+    {
+      "class_index": 61,
+      "synset": "n03633091",
+      "name": "ladle"
+    },
+    {
+      "class_index": 62,
+      "synset": "n03692522",
+      "name": "loupe, jeweler's loupe"
+    },
+    {
+      "class_index": 63,
+      "synset": "n03724870",
+      "name": "mask"
+    },
+    {
+      "class_index": 64,
+      "synset": "n03759954",
+      "name": "microphone, mike"
+    },
+    {
+      "class_index": 65,
+      "synset": "n03769881",
+      "name": "minibus"
+    },
+    {
+      "class_index": 66,
+      "synset": "n03785016",
+      "name": "moped"
+    },
+    {
+      "class_index": 67,
+      "synset": "n03804744",
+      "name": "nail"
+    },
+    {
+      "class_index": 68,
+      "synset": "n03843555",
+      "name": "oil filter"
+    },
+    {
+      "class_index": 69,
+      "synset": "n03871628",
+      "name": "packet"
+    },
+    {
+      "class_index": 70,
+      "synset": "n03929660",
+      "name": "pick, plectrum, plectron"
+    },
+    {
+      "class_index": 71,
+      "synset": "n03933933",
+      "name": "pier"
+    },
+    {
+      "class_index": 72,
+      "synset": "n03938244",
+      "name": "pillow"
+    },
+    {
+      "class_index": 73,
+      "synset": "n03976657",
+      "name": "pole"
+    },
+    {
+      "class_index": 74,
+      "synset": "n04023962",
+      "name": "punching bag, punch bag, punching ball, punchball"
+    },
+    {
+      "class_index": 75,
+      "synset": "n04041544",
+      "name": "radio, wireless"
+    },
+    {
+      "class_index": 76,
+      "synset": "n04067472",
+      "name": "reel"
+    },
+    {
+      "class_index": 77,
+      "synset": "n04069434",
+      "name": "reflex camera"
+    },
+    {
+      "class_index": 78,
+      "synset": "n04141327",
+      "name": "scabbard"
+    },
+    {
+      "class_index": 79,
+      "synset": "n04149813",
+      "name": "scoreboard"
+    },
+    {
+      "class_index": 80,
+      "synset": "n04204347",
+      "name": "shopping cart"
+    },
+    {
+      "class_index": 81,
+      "synset": "n04326547",
+      "name": "stone wall"
+    },
+    {
+      "class_index": 82,
+      "synset": "n04328186",
+      "name": "stopwatch, stop watch"
+    },
+    {
+      "class_index": 83,
+      "synset": "n04332243",
+      "name": "strainer"
+    },
+    {
+      "class_index": 84,
+      "synset": "n04398044",
+      "name": "teapot"
+    },
+    {
+      "class_index": 85,
+      "synset": "n04418357",
+      "name": "theater curtain, theatre curtain"
+    },
+    {
+      "class_index": 86,
+      "synset": "n04467665",
+      "name": "trailer truck, tractor trailer, trucking rig, rig, articulated lorry, semi"
+    },
+    {
+      "class_index": 87,
+      "synset": "n04487394",
+      "name": "trombone"
+    },
+    {
+      "class_index": 88,
+      "synset": "n04517823",
+      "name": "vacuum, vacuum cleaner"
+    },
+    {
+      "class_index": 89,
+      "synset": "n04532106",
+      "name": "vestment"
+    },
+    {
+      "class_index": 90,
+      "synset": "n04540053",
+      "name": "volleyball"
+    },
+    {
+      "class_index": 91,
+      "synset": "n04591157",
+      "name": "Windsor tie"
+    },
+    {
+      "class_index": 92,
+      "synset": "n04606251",
+      "name": "wreck"
+    },
+    {
+      "class_index": 93,
+      "synset": "n07734744",
+      "name": "mushroom"
+    },
+    {
+      "class_index": 94,
+      "synset": "n07753592",
+      "name": "banana"
+    },
+    {
+      "class_index": 95,
+      "synset": "n07875152",
+      "name": "potpie"
+    },
+    {
+      "class_index": 96,
+      "synset": "n09428293",
+      "name": "seashore, coast, seacoast, sea-coast"
+    },
+    {
+      "class_index": 97,
+      "synset": "n10565667",
+      "name": "scuba diver"
+    },
+    {
+      "class_index": 98,
+      "synset": "n12057211",
+      "name": "yellow lady's slipper, yellow lady-slipper, Cypripedium calceolus, Cypripedium parviflorum"
+    },
+    {
+      "class_index": 99,
+      "synset": "n12768682",
+      "name": "buckeye, horse chestnut, conker"
+    }
+  ]
+}

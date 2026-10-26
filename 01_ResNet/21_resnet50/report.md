@@ -38,7 +38,7 @@
 
 ## 3. 数据与训练设置
 
-图片来自Kaggle的ImageNet Object Localization Challenge。本实验使用随机种子42，从1000类中固定选取100类。检查后排除74条重复或标签冲突记录，保留133908张图片，划分如下：
+图片从ImageNet官网下载。本实验使用随机种子42，从1000类中固定选取100类。检查后排除74条重复或标签冲突记录，保留133908张图片，划分如下：
 
 | 集合 | 图片数 | 用途 |
 |---|---:|---|
@@ -100,7 +100,7 @@
 
 训练损失从第一轮的4.5654降至最后一轮的0.3638。前两次降低学习率后，验证准确率分别从62.12%提高到80.18%、从81.23%提高到83.70%。第91轮第三次降低学习率后，验证准确率提升较小，第96轮达到最高值84.64%。最终加载第96轮模型测试，准确率达到81.69%。该结果对应本实验选取的100类子集。
 
-本次结果保存在 `01_ResNet/outputs/21_resnet50_cloud/resnet50_run01`：
+实验输出统一保存在 `/mnt/c/Users/34138/Desktop/深度学习/01_ResNet/21_resnet50/outputs`，本次结果位于其中的 `resnet50_run01` 子目录，即仓库内的 `01_ResNet/21_resnet50/outputs/resnet50_run01`：
 
 | 文件 | 本次保存内容 |
 |---|---|
@@ -109,11 +109,34 @@
 | `training.csv` | 第1～100轮的训练、验证指标和耗时，共100条记录，不含表头 |
 | `result.txt` | 训练设置、最佳轮次和最终测试结果 |
 
+完整运行日志为 `outputs/resnet50_run01.log`。
+
 两个 `.pt` 文件均保存模型参数、BN运行统计量、类别表、轮次、验证准确率和命令行参数。命令行参数包括项目目录、输出目录、训练轮数、批次大小和数据加载进程数。未保存优化器状态，当前程序不支持断点续训。`best.pt` 是文件名，第96轮保存在文件内部的 `epoch` 字段中。
 
 ## 5. 运行方式
 
+运行环境为Python 3.11、PyTorch 2.6.0+cu124和torchvision 0.21.0+cu124，正式训练需要支持CUDA的显卡。
+
+本仓库公开模型、数据检查、训练、测试与预测代码。原始图片从ImageNet官网下载后，由本人完成100类子集的整理、检查与划分。数据获取脚本暂不公开，图片和模型权重也未包含在代码仓库中。以下训练命令以图片、类别表及固定划分清单已经准备好为前提：
+
+| 路径，相对于本实验目录 | 内容 |
+|---|---|
+| `data/imagenet100_raw/` | 解压后的图片，按 `train/类别/图片` 和 `val/类别/图片` 存放 |
+| `metadata/classes.json` | 本实验固定的100类及标签对应关系 |
+| `metadata/splits_seed42/train.csv` | 训练集清单 |
+| `metadata/splits_seed42/val.csv` | 验证集清单 |
+| `metadata/splits_seed42/test.csv` | 最终测试集清单 |
+| `metadata/splits_seed42/data_audit.json` | 状态为 `complete` 的数据检查与划分记录 |
+
+上述类别表、清单和检查记录由本项目的数据准备过程生成。仅克隆代码仓库不会自动获得全部训练数据及配套文件。单张图片预测还需要先准备相应的模型权重文件。
+
 以下命令均在 `01_ResNet/21_resnet50` 目录运行。
+
+本机WSL中先进入该目录：
+
+```bash
+cd /mnt/c/Users/34138/Desktop/深度学习/01_ResNet/21_resnet50
+```
 
 先检查模型：
 
@@ -121,7 +144,7 @@
 python checks.py --check model --device cuda
 ```
 
-准备好解压后的图片、类别表和打包配套文件后，检查图片并生成固定划分：
+若另有本项目打包阶段生成的 `imagenet100_manifest.csv` 和 `imagenet100_packages.json`，可将它们放在 `data/packages/imagenet100_packages/`，再运行以下命令检查图片并生成固定划分。该步骤依赖未公开的数据获取过程，并非克隆仓库后可直接执行的下载命令：
 
 ```bash
 python -u prepare_data.py --audit-and-split
@@ -138,7 +161,7 @@ python -u train.py --project-dir . --output-dir outputs/resnet50_run02 --epochs 
 直接使用本次已下载的第96轮 `best.pt` 预测单张图片，无需重新训练。将 `/path/to/image.jpg` 替换为实际图片路径：
 
 ```bash
-python predict.py --checkpoint ../outputs/21_resnet50_cloud/resnet50_run01/best.pt --image /path/to/image.jpg
+python predict.py --checkpoint outputs/resnet50_run01/best.pt --image /path/to/image.jpg
 ```
 
 如果重新执行了上面的 `resnet50_run02` 训练，则预测时改用新实验保存的最佳模型：
